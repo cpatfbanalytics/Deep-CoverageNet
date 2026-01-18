@@ -4,11 +4,11 @@
 
 A deep learning system that predicts defensive coverage shells from early pre-snap movement using NFL tracking data. Achieves 87% accuracy at 90% confidence threshold, enabling selective auto-tagging for 22% of plays while reducing manual charting workload.
 
-## 🏈 Project Overview
+## Project Overview
 
 Deep CoverageNet classifies defensive coverage into six shells (2 MAN, C0, C1, C2, C3, C4) using only the first 1.2 seconds (12 frames) of pre-throw defender movement. The system combines automation benefits with strategic insights into defensive disguise quality.
 
-## 🎯 Key Results
+## Key Results
 
 - **Overall Accuracy**: 66.2% across all plays
 - **Macro F1 Score**: 0.536
@@ -16,7 +16,7 @@ Deep CoverageNet classifies defensive coverage into six shells (2 MAN, C0, C1, C
 - **Coverage at Threshold**: Auto-tags 22% of plays with high precision
 - **Practical Impact**: Reduces analyst workload by 40% at 80% confidence threshold
 
-## 📊 Model Architecture Comparison
+## Model Architecture Comparison
 
 | Model | Accuracy | Macro F1 | Notes |
 |-------|----------|----------|-------|
@@ -31,7 +31,7 @@ Deep CoverageNet classifies defensive coverage into six shells (2 MAN, C0, C1, C
 - Best balance of accuracy and calibration
 - Robust performance across all coverage types
 
-## 🔬 Methodology
+## Methodology
 
 ### Data Processing
 
@@ -66,7 +66,7 @@ Output: Softmax(6 classes)
 - Early stopping with patience=10
 - Batch size: 32
 
-## 📈 Per-Class Performance
+## Per-Class Performance
 
 | Coverage | Precision | Recall | F1 Score | Support |
 |----------|-----------|--------|----------|---------|
@@ -83,7 +83,7 @@ Output: Softmax(6 classes)
 - C4 often mislabeled as C3 (identical early leverage)
 - 2 MAN weakest due to low support and overlap with C1
 
-## 🎯 Confidence Calibration
+## Confidence Calibration
 
 The model demonstrates strong uncertainty awareness:
 
@@ -100,7 +100,7 @@ The model demonstrates strong uncertainty awareness:
 - Incorrect predictions cluster at 0.5-0.7 confidence
 - Strong separation enables selective prediction workflow
 
-## 💼 Business Applications
+## Business Applications
 
 ### 1. Automated Charting Workflow
 ```
@@ -132,7 +132,7 @@ Model uncertainty quantifies defensive deception:
 - Rotation detection and timing analysis
 - Matchup preparation insights
 
-## 🔍 Error Analysis
+## Error Analysis
 
 ### Common Confusions
 
@@ -155,7 +155,7 @@ Model errors align with real defensive strategy:
 - 2 MAN/C1 share safety positioning until declaration
 - Confusions reveal successful disguise, not model failure
 - 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 ```bash
@@ -183,7 +183,7 @@ jupyter notebook notebooks/Deep_CoverageNet_Main.ipynb
 - **Format**: CSV with frame-level coordinates, velocities, and metadata
 - **Sample Size**: 13,611 plays (80/20 train/val split)
 
-## 🎓 Technical Details
+## Technical Details
 
 ### Implementation
 
@@ -208,7 +208,7 @@ jupyter notebook notebooks/Deep_CoverageNet_Main.ipynb
 - **Calibration**: Confidence reliability
 - **Interpretability**: Error patterns match football logic
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 ### Technical Improvements
 
@@ -231,7 +231,7 @@ jupyter notebook notebooks/Deep_CoverageNet_Main.ipynb
 - **Active Learning**: Flag uncertain cases for analyst feedback
 - **Continuous Retraining**: Update with new seasons and schemes
 
-## 📊 Coverage Distribution
+## Coverage Distribution
 
 Dataset composition:
 - C3 (Cover 3): 3,200 plays (most common)
@@ -243,7 +243,7 @@ Dataset composition:
 
 **Challenge**: Severe imbalance requires careful handling
 
-## 🏆 Academic Context
+## Academic Context
 
 **Course**: Deep Learning for Sports Analytics  
 **Team**: Conor Patten, John Zhang, Stacy Chen, Emma Zhu, Tanmay Arya  
@@ -256,7 +256,7 @@ Dataset composition:
 - Presentation slides
 - Model checkpoints and visualizations
 
-## 👥 Team Contributions
+## Team Contributions
 
 **Conor Patten** (Primary Developer):
 - Complete modeling framework design
@@ -276,25 +276,22 @@ Dataset composition:
 
 **Tanmay Arya**: Output validation, results formatting, presentation feedback
 
-## 📝 Citation
+## Citation
 ```bibtex
 @misc{deepcoveragenet2024,
   title={Deep CoverageNet: Automated NFL Coverage Shell Classification},
   author={Patten, Conor and Zhang, John and Chen, Stacy and Zhu, Emma and Arya, Tanmay},
   year={2024},
-  howpublished={Course Project},
-  institution={[Your University]}
-}
 ```
 
-## 📧 Contact
+## Contact
 
 **Lead Developer**: Conor Patten  
 **Email**: conor.patten@duke.edu 
 **LinkedIn**: https://www.linkedin.com/in/conor-patten/
 
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - NFL and AWS for Next Gen Stats tracking data
 - Course instructors and teaching staff
@@ -305,6 +302,6 @@ Dataset composition:
 
 **Built with**: PyTorch • NumPy • scikit-learn • Matplotlib • Seaborn
 
-**Status**: ✅ Project Complete
+**Status**: Project Complete
 
 **Key Innovation**: First automated system to quantify defensive disguise quality through model uncertainty
